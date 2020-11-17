@@ -1,10 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello Coursera</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  overflow:hidden;
+  scrolling:no;
+}
+table {
+   width: 100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: black;
+  color: white;
+}
+#th {
+  background-color: black;
+  color: white;
+  text-align:center;
+  margin-bottom: 0;
+}
+a{
+  text-decoration: none;
+}
+#th:hover {
+   background-color:rgb(11, 143, 46);
+}
+</style>
 </head>
 <body>
-	<h1>Hello Coursera! It's a great course.</h1>
-
+<a href="https://cccconfer.zoom.us/j/277849288">
+<div>
+<div><h1 id="th">MARTES
+<br>9:00 am - 12:00 pm<br><marquee id="demo" align="center"></marquee></h1></div>
+<div>
+<table id="t01"> 
+  <tr>
+    <th>Tema</th>
+    <th>Horario</th> 
+  </tr>
+  <tr>
+    <td>Matemáticas</td>
+    <td>9:00 am - 10:30 pm</td>
+  </tr>
+  <tr>
+    <td>Ciencias</td>
+    <td>10:40 pm - 12:00 pm </td>
+  </tr>
+</table>
+</div>
+</div>
+</a>
 </body>
-</html>> 
+
+<script>
+function doDate(){
+  var d = new Date();
+  var weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+  var hr = d.getHours();
+  var min = d.getMinutes();
+  var exh = hr + (min/60);
+  var n = weekday[d.getDay()];
+  if((n =="Tuesday") && (exh >= 9.0 && exh <= 12.0)){
+  document.getElementById("demo").innerHTML = "En vivo ahora";
+  document.getElementById("demo").style.background = "Tomato";
+  document.getElementById("demo").style.color= "White";
+  }
+  else
+  document.getElementById("demo").innerHTML ="";
+  }
+ setInterval(doDate, 1000);
+</script>
+
