@@ -45,8 +45,9 @@ a{
 <body>
 <a href="https://cccconfer.zoom.us/j/277849288">
 <div>
-<div><h1 id="th">MARTES
-<br>9:00 am - 12:00 pm<br><marquee id="demo" align="center"></marquee></h1></div>
+<div>
+	<marquee id="demo" align="center"></marquee>
+	<h1 id="th"></h1></div>
 <div>
 <table id="t01"> 
   <tr>
@@ -54,12 +55,12 @@ a{
     <th>Horario</th> 
   </tr>
   <tr>
-    <td>Matemáticas</td>
-    <td>9:00 am - 10:30 pm</td>
+    <td id="subject1"></td>
+    <td id="hour1"></td>
   </tr>
   <tr>
-    <td>Ciencias</td>
-    <td>10:40 pm - 12:00 pm </td>
+    <td id="subject2"></td>
+    <td id="hour2"></td>
   </tr>
 </table>
 </div>
@@ -82,14 +83,140 @@ function doDate(){
   var min = d.getMinutes();
   var exh = hr + (min/60);
   var n = weekday[d.getDay()];
-  if((n =="Tuesday") && (exh >= 9.0 && exh <= 12.0)){
-  document.getElementById("demo").innerHTML = "En vivo ahora";
-  document.getElementById("demo").style.background = "Tomato";
-  document.getElementById("demo").style.color= "White";
+  if(n =="Tuesday"){
+  	if (exh >= 1.0 && exh <= 12.5){
+  	document.getElementById("demo").innerHTML = "";
+    document.getElementById("th").innerHTML = "MARTES" + "<br>9:00 am - 12:00 PM";
+  	document.getElementById("subject1").innerHTML = "Matemáticas";
+  	document.getElementById("hour1").innerHTML = "9:00 am - 10:30 pm";
+  	document.getElementById("subject2").innerHTML = "Lectura";
+  	document.getElementById("hour2").innerHTML = "10:40 - 12:00 pm";
+  		if(exh>= 9 && exh <= 12){
+  			document.getElementById("demo").innerHTML = "En vivo ahora";
+    		document.getElementById("demo").style.background = "Tomato";
+    		document.getElementById("demo").style.color= "White";
+  		}
+ 		else
+  			document.getElementById("demo").innerHTML = "";
+  	}
+ 	else if (exh > 12.5 && exh <= 24.9){
+  	document.getElementById("demo").innerHTML = "";
+    document.getElementById("th").innerHTML = "MARTES" + "<br>6:00 pm - 8:30 PM";
+  	document.getElementById("subject1").innerHTML = "Matemáticas";
+  	document.getElementById("hour1").innerHTML = "6:00 pm - 7:30 pm";
+  	document.getElementById("subject2").innerHTML = "Lectura";
+  	document.getElementById("hour2").innerHTML = "7:40 pm - 8:30 pm";
+  		if(exh>= 18 && exh <= 20.5){
+  			document.getElementById("demo").innerHTML = "En vivo ahora";
+    		document.getElementById("demo").style.background = "Tomato";
+    		document.getElementById("demo").style.color= "White";
+  		}
+ 		else
+  			document.getElementById("demo").innerHTML = "";
+  	}
   }
-  else
-  document.getElementById("demo").innerHTML ="";
+  else if(n =="Wednesday"){
+  	if (exh >= 1.0 && exh <= 24.9){
+  	document.getElementById("demo").innerHTML = "";
+    document.getElementById("th").innerHTML = "MIÉRCOLES" + "<br>5:00 PM - 7:00 PM";
+  	document.getElementById("subject1").innerHTML = "Matemáticas";
+  	document.getElementById("hour1").innerHTML = "5:00 pm - 5:50 pm";
+  	document.getElementById("subject2").innerHTML = "Matemáticas";
+  	document.getElementById("hour2").innerHTML = "6:00 pm - 7:00 pm";
+  		if(exh>= 17 && exh <= 19){
+  			document.getElementById("demo").innerHTML = "En vivo ahora";
+    		document.getElementById("demo").style.background = "Tomato";
+    		document.getElementById("demo").style.color= "White";
+  		}
+ 		else
+  			document.getElementById("demo").innerHTML = "";
+  	}
   }
+ if(n =="Thursday"){
+  	if (exh >= 1.0 && exh <= 12.5){
+  	document.getElementById("demo").innerHTML = "";
+    document.getElementById("th").innerHTML = "JUEVES" + "<br>9:00 AM - 12:00 PM";
+  	document.getElementById("subject1").innerHTML = "Matemáticas";
+  	document.getElementById("hour1").innerHTML = "9:00 am - 10:30 pm";
+  	document.getElementById("subject2").innerHTML = "Lectura";
+  	document.getElementById("hour2").innerHTML = "10:40 - 12:00 pm";
+  		if(exh>= 9 && exh <= 12){
+  			document.getElementById("demo").innerHTML = "En vivo ahora";
+    		document.getElementById("demo").style.background = "Tomato";
+    		document.getElementById("demo").style.color= "White";
+  		}
+ 		else
+  			document.getElementById("demo").innerHTML = "";
+  	}
+ 	else if (exh > 12.5 && exh <= 24.9){
+  	document.getElementById("demo").innerHTML = "";
+    document.getElementById("th").innerHTML = "JUEVES" + "<br>6:00 PM - 8:30 PM";
+  	document.getElementById("subject1").innerHTML = "Matemáticas";
+  	document.getElementById("hour1").innerHTML = "6:00 pm - 7:30 pm";
+  	document.getElementById("subject2").innerHTML = "Lectura";
+  	document.getElementById("hour2").innerHTML = "7:40 pm - 8:30 pm";
+  		if(exh>= 18 && exh <= 20.5){
+  			document.getElementById("demo").innerHTML = "En vivo ahora";
+    		document.getElementById("demo").style.background = "Tomato";
+    		document.getElementById("demo").style.color= "White";
+  		}
+ 		else
+  			document.getElementById("demo").innerHTML = "";
+  	}
+  }
+  else if(n =="Friday"){
+  	if (exh >= 1.0 && exh <= 24.9){
+  	document.getElementById("demo").innerHTML = "";
+    document.getElementById("th").innerHTML = "VIERNES" + "<br>5:00 PM - 7:00 PM";
+  	document.getElementById("subject1").innerHTML = "Lectura";
+  	document.getElementById("hour1").innerHTML = "5:00 pm - 5:50 pm";
+  	document.getElementById("subject2").innerHTML = "Lectura";
+  	document.getElementById("hour2").innerHTML = "6:00 pm - 7:00 pm";
+  		if(exh>= 17 && exh <= 19){
+  			document.getElementById("demo").innerHTML = "En vivo ahora";
+    		document.getElementById("demo").style.background = "Tomato";
+    		document.getElementById("demo").style.color= "White";
+  		}
+ 		else
+  			document.getElementById("demo").innerHTML = "";
+  	}
+  }
+  else if(n =="Saturday"){
+  	if (exh >= 1.0 && exh <= 24.9){
+  	document.getElementById("demo").innerHTML = "";
+    document.getElementById("th").innerHTML = "SÁBADO" + "<br>5:00 PM - 7:00 PM";
+  	document.getElementById("subject1").innerHTML = "Lectura";
+  	document.getElementById("hour1").innerHTML = "5:00 pm - 5:50 pm";
+  	document.getElementById("subject2").innerHTML = "Lectura";
+  	document.getElementById("hour2").innerHTML = "6:00 pm - 7:00 pm";
+  		if(exh>= 9 && exh <= 13){
+  			document.getElementById("demo").innerHTML = "En vivo ahora";
+    		document.getElementById("demo").style.background = "Tomato";
+    		document.getElementById("demo").style.color= "White";
+  		}
+ 		else
+  			document.getElementById("demo").innerHTML = "";
+  	}
+  }
+  else if(n =="Sunday"){
+  	document.getElementById("demo").innerHTML = "";
+    document.getElementById("th").innerHTML = "MARTES" + "<br>9:00 am - 12:00 PM";
+  	document.getElementById("subject1").innerHTML = "Matemáticas";
+  	document.getElementById("hour1").innerHTML = "9:00 am - 10:30 pm";
+  	document.getElementById("subject2").innerHTML = "Lectura";
+  	document.getElementById("hour2").innerHTML = "10:40 - 12:00 pm";
+  }
+  else if(n =="Monday"){
+  	document.getElementById("demo").innerHTML = "";
+    document.getElementById("th").innerHTML = "MARTES" + "<br>9:00 am - 12:00 PM";
+  	document.getElementById("subject1").innerHTML = "Matemáticas";
+  	document.getElementById("hour1").innerHTML = "9:00 am - 10:30 pm";
+  	document.getElementById("subject2").innerHTML = "Lectura";
+  	document.getElementById("hour2").innerHTML = "10:40 - 12:00 pm";
+  }
+
+}
  setInterval(doDate, 1000);
 </script>
+
 
